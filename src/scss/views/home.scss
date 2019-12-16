@@ -1,0 +1,9 @@
+ul.music-list {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     padding: 10px;
+     background: $bg-opacity-color;
+}

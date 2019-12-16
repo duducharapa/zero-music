@@ -1,0 +1,37 @@
+nav.navbar {
+     background: $primary-color;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     flex-direction: row;
+     padding: 20px 0;
+}
+
+a.navbar-brand {
+     font-size: 1.4rem;
+     color: $brand-color;
+     font-family: $primary-font, cursive;
+}
+
+a:not(.navbar-brand) {
+     color: $secondary-color;
+     transition: all 0.3s;
+
+     &:hover {
+          color: darken($secondary-color, 50%);
+     }
+}
+
+a.active {
+     color: darken($secondary-color, 50%);          
+}
+
+ul.navbar-menu {
+     display: flex;
+     flex-direction: row;
+     width: 80%;
+}
+
+li.navbar-menu-item {
+     margin: 0 10px;
+}

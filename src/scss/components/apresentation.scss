@@ -1,0 +1,52 @@
+h1.apresentation-subname, h1.apresentation-name {
+     text-align: center;
+}
+
+h1.apresentation-subname {
+     font-family: $secondary-font, sans-serif;
+     font-size: 1.7rem;
+     color: $brand-color;
+     font-weight: 100;
+}
+
+h1.apresentation-name {
+     font-weight: bold;
+     color: $primary-color;
+     font-size: 5rem;
+     font-family: $primary-font, cursive;
+     text-shadow: 0px 0px 5px #C6962D;
+}
+
+div.apresentation {
+     padding: 20px;
+     background: linear-gradient($primary-color,$secondary-color);
+
+     div {
+          margin-bottom: 50px;
+     }
+}
+
+div.apresentation, form.apresentation-form {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+form.apresentation-form {
+     margin-bottom: 30px;
+}
+
+input.apresentation-input {
+     width: 80%;
+     height: 40px;
+     padding: 5px;
+     border: none;
+     border-radius: 5px;
+     font-size: 1rem;
+     color: $primary-color;
+     
+     &::placeholder{
+          color: $primary-color;
+     }
+}

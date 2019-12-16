@@ -1,0 +1,25 @@
+section {
+     background: $secondary-color;
+     padding: 20px 20px 50px 20px;
+}
+
+div.section-box {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     background: $primary-color;
+     padding: 10px;
+}
+
+h1.section-title {
+     color: $brand-color;
+     font-weight: 100;
+     word-break: break-word;
+}
+
+i.section-icon {
+     font-size: 1.8rem;
+     margin: 0 10px;
+     color: $terciary-color;
+}
