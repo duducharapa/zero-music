@@ -50,3 +50,17 @@ input.apresentation-input {
           color: $primary-color;
      }
 }
+
+@media screen and (max-width: 576px){
+     h1.apresentation-name {
+          font-size: 4.2rem;
+     }
+
+     h1.apresentation-subname {
+          font-size: 1.4rem;
+     }
+
+     input.apresentation-input {
+          width: 100%;
+     }
+}

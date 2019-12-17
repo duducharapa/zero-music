@@ -35,3 +35,9 @@ ul.navbar-menu {
 li.navbar-menu-item {
      margin: 0 10px;
 }
+
+@media screen and (max-width: 576px){
+     ul.navbar-menu {
+          width: 60%;
+     }
+}
