@@ -4,6 +4,7 @@ import Navbar from '../components/navbar';
 import Apresentation from '../components/apresentation';
 import Section from '../components/section';
 import Music from '../components/music';
+import Footer from '../components/footer';
 
 export default class Home extends Component {
      render() {
@@ -47,6 +48,7 @@ export default class Home extends Component {
                          icon="heart"
                     />
 
+                    <Footer />
                </div>
           );
      }

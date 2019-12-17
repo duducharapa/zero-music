@@ -1,0 +1,32 @@
+footer {
+     background: linear-gradient($secondary-color, $primary-color);
+     padding: 50px 0px 5px 0px;
+}
+
+ul.footer-menu {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     margin: 5px 0; 
+}
+
+li.footer-menu-item {
+     margin: 0 5px;
+
+     &:not(:first-child)::before{
+          content: ' \25CF';
+          color: $brand-color;
+          margin-right: 5px;
+     }
+}
+
+a.footer-menu-link {
+     color: $brand-color;
+     font-weight: 100;
+}
+
+p.footer-credits {
+     color: $terciary-color;
+     text-align: center;
+}
