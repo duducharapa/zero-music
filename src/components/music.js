@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import Button from './button';
 
 export default class Music extends Component {
      
@@ -14,13 +16,18 @@ export default class Music extends Component {
 
           return (
                <article className="music">
-                    <a href={ `/musics/${this.imgName}` } className="music-anchor">
-                         <img className="music-image" src={ this.image } alt={ title } />
-                    </a>
-
-                    <div className="music-info">
+                    <div className="music-header">
                          <h1 className="music-title"> { title } </h1>
+                    </div>
+                    <div className="music-body">
+                         <img className="music-image" src={ this.image } alt={ title } />
+                    </div>
+                    <div className="music-footer">
                          <h2 className="music-author"> { author } </h2>
+                         <Button
+                              text="Ouvir" href={`/music/${this.imgName}`}
+                              icon="headphones" className="music-link" 
+                         />
                     </div>
                </article>
           )

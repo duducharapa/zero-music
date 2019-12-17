@@ -1,55 +1,40 @@
 article.music {
-     position: relative;
-     width: 10.5rem;
-     height: 10.5rem;
-     overflow: hidden;
-     background: black;
-     margin: 0 5px;
-     transition: all 0.4s;
-
-     &:hover {
-          box-shadow: 1px 1px 5px rgb(56, 54, 54);
-
-          h1.music-title, h2.music-author {
-               display: block;
-          }
-     }
+     width: 200px;
 }
 
 img.music-image {
-     width: 100%;
-     height: 100%;
+     width: 200px;
+     height: 200px;
 }
 
-a.music-anchor {
-     opacity: 1;
-     transition: all 0.5s;
-
-     &:hover {
-          opacity: 0.3;
-     }
-}
-
-div.music-info {
-     position: absolute;
-     bottom: 0;
-     width: 100%;
-     margin-bottom: 10px;
-}
-
-h1.music-title, h2.music-author {
-     text-align: center;
-     display: none;
+div.music-header, div.music-footer {
+     background: $secondary-color;
+     padding: 5px;
 }
 
 h1.music-title {
      color: $brand-color;
      font-weight: 100;
-     font-size: 1.4rem;
+     font-size: 1.2rem;
 }
 
 h2.music-author {
-     color: $terciary-color;
+     color: $primary-color;
      font-weight: 100;
      font-size: 1rem;
+}
+
+div.music-footer {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+h1.music-title, h2.music-author {
+     text-align: center;
+}
+
+a.music-link {
+     margin: 0 10px;
+     align-self: flex-end;
 }

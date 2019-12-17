@@ -13,7 +13,7 @@ a.navbar-brand {
      font-family: $primary-font, cursive;
 }
 
-a:not(.navbar-brand) {
+a.navbar-menu-link {
      color: $secondary-color;
      transition: all 0.3s;
 

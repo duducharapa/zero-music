@@ -1,0 +1,16 @@
+a.button {
+     background: $terciary-color;
+     padding: 5px;
+     color: $brand-color;
+     transition: all 0.4s;
+     border-radius: 3px;
+
+     &:hover {
+          background: darken($terciary-color, 20%);
+          cursor: pointer;
+     }
+
+     i {
+          margin: 0 5px;
+     }
+}

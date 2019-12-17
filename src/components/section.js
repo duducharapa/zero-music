@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Section extends Component {
+class Section extends Component {
      
      static defaultProps = {
           title: ''
@@ -27,3 +27,5 @@ Section.propTypes = {
      title: PropTypes.string,
      icon: PropTypes.string
 }
+
+export default Section;
