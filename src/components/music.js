@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Button from './button';
 
-export default class Music extends Component {
+class Music extends Component {
      
      constructor(props){
           super(props);
@@ -33,3 +34,10 @@ export default class Music extends Component {
           )
      }
 }
+
+Music.propTypes = {
+     title: PropTypes.string.isRequired,
+     author: PropTypes.string.isRequired
+}
+
+export default Music;

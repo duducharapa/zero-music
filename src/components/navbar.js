@@ -4,9 +4,7 @@ export default class Navbar extends Component {
      render() {
           return (
                <nav className="navbar">
-                    <a className="navbar-brand" href="/">
-                         Zero music
-                    </a>
+                    <a className="navbar-brand" href="/"> Zero music </a>
 
                     <ul className="navbar-menu">
                          <li className="navbar-menu-item">
