@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import { routes } from '../helpers/routes';
 
 export default class Footer extends Component {
      render() {
@@ -6,21 +8,15 @@ export default class Footer extends Component {
                <footer>
                     <nav>
                          <ul className="footer-menu">
-                              <li className="footer-menu-item">
-                                   <a href="/" className="footer-menu-link">
-                                        Início
-                                   </a>
-                              </li>
-                              <li className="footer-menu-item">
-                                   <a href="/musics" className="footer-menu-link">
-                                        Músicas
-                                   </a>
-                              </li>
-                              <li className="footer-menu-item">
-                                   <a href="/about" className="footer-menu-link">
-                                        Sobre
-                                   </a>
-                              </li>
+                              {
+                                   routes.map( ({ path, text }) => (
+                                        <li className="footer-menu-item">
+                                             <a href={ path } className="footer-menu-link">
+                                                  { text }
+                                             </a>
+                                        </li>
+                                   ))
+                              }
                          </ul>
                     </nav>
                     <p className="footer-credits">
