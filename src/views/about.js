@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
@@ -7,11 +8,11 @@ import Apresentation from '../components/apresentation';
 
 const devIcon = require('../images/charapa.jpg');
 
-export default class About extends Component {
+class About extends Component {
      render() {
           return (
                <div>
-                    <Navbar />
+                    <Navbar location={ this.props.location.pathname } />
                     <Apresentation />
 
                     <Section title="One-man army" icon="users">
@@ -67,3 +68,5 @@ export default class About extends Component {
           )
      }
 }
+
+export default withRouter(About);

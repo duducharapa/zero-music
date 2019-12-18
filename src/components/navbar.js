@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 
-export default class Navbar extends Component {
+export default class Navbar extends Component {     
+     routes = [
+          { text: "Início", path: "/" },
+          { text: "Músicas", path: "/musics" },
+          { text: "Sobre",path: "/about" }
+     ]
+     
      render() {
+          const { location } = this.props;
+
           return (
                <nav className="navbar">
                     <a className="navbar-brand" href="/"> Zero music </a>
 
                     <ul className="navbar-menu">
-                         <li className="navbar-menu-item">
-                              <a className="navbar-menu-link" href="/"> Início </a>
-                         </li>
-                         <li className="navbar-menu-item">
-                              <a className="navbar-menu-link" href="/musics"> Músicas </a>
-                         </li>
-                         <li className="navbar-menu-item">
-                              <a className="navbar-menu-link" href="/about"> Sobre </a>
-                         </li>
+                         { this.routes.map( ({ text, path }) => (
+                              <li className="navbar-menu-item" key={ text }>
+                                   <a 
+                                        className={ `navbar-menu-link ${path === location ? 'active' : ''}` } 
+                                        href={ path }
+                                   > 
+                                        { text } 
+                                   </a>
+                              </li>
+                         )) }
                     </ul>
                </nav>
           )

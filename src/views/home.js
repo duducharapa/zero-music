@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 import Apresentation from '../components/apresentation';
@@ -6,11 +7,11 @@ import Section from '../components/section';
 import Music from '../components/music';
 import Footer from '../components/footer';
 
-export default class Home extends Component {
+class Home extends Component {
      render() {
           return (
                <div>
-                    <Navbar />
+                    <Navbar location={ this.props.location.pathname } />
                     <Apresentation />
 
                     <Section 
@@ -53,3 +54,5 @@ export default class Home extends Component {
           );
      }
 }
+
+export default withRouter(Home);
