@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 
 export default class Apresentation extends Component {
+     
+     state = {
+          music: ''
+     }
+
+     setMusic = event => this.setState({ music: event.target.value });
+     
      render() {
+          const { music } = this.state;
+
           return (
                <div className="apresentation">
                     <div>
@@ -11,10 +20,15 @@ export default class Apresentation extends Component {
                          </h1>
                     </div>
 
-                    <form className="apresentation-form">
-                         <input 
+                    <form 
+                         className="apresentation-form" method="GET" 
+                         action={ `/musics/${ music }` }
+                    >
+                         <input
+                              onChange={ this.setMusic } 
                               placeholder="Qual soneto buscas?" 
-                              className="apresentation-input"     
+                              className="apresentation-input"
+                              value={ music }    
                          />
                     </form>
                </div>
