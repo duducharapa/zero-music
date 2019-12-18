@@ -9,19 +9,15 @@ import './scss/index.scss';
 import Home from './views/home';
 import Musics from './views/musics';
 import About from './views/about';
+import Music from './views/music';
 
 ReactDOM.render(
      <BrowserRouter>
           <Switch>
-               <Route path="/musics">
-                    <Musics />
-               </Route>
-               <Route path="/about">
-                    <About />
-               </Route>
-               <Route path="/" exact>
-                    <Home />
-               </Route>
+               <Route path="/musics/:music" component={ Music } />
+               <Route path="/musics" component={ Musics } />
+               <Route path="/about" component={ About } />
+               <Route path="/" exact component={ Home } />
           </Switch>
      </BrowserRouter>
 , document.getElementById('root'));
