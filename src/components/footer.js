@@ -10,7 +10,7 @@ export default class Footer extends Component {
                          <ul className="footer-menu">
                               {
                                    routes.map( ({ path, text }) => (
-                                        <li className="footer-menu-item">
+                                        <li key={ text } className="footer-menu-item">
                                              <a href={ path } className="footer-menu-link">
                                                   { text }
                                              </a>
