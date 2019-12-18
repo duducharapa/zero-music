@@ -22,7 +22,7 @@ export default class Apresentation extends Component {
 
                     <form 
                          className="apresentation-form" method="GET" 
-                         action={ `/musics/${ music }` }
+                         action={ `/music/${ music }` }
                     >
                          <input
                               onChange={ this.setMusic } 

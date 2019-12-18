@@ -4,15 +4,12 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Apresentation from '../components/apresentation';
 import Section from '../components/section';
-import Card from '../components/card';
 import Footer from '../components/footer';
+import MusicList from '../components/musiclist';
 
 import { getBreakupMusics, getIllbethereMusics } from '../helpers/music-data';
 
 class Home extends Component {
-
-     breakupMusics = getBreakupMusics();
-     illbethereMusics = getIllbethereMusics();
 
      render() {
           return (
@@ -24,36 +21,14 @@ class Home extends Component {
                          title="Dê um Break Up na sua rotina com:"
                          icon="star"
                     >
-                         <ul className="music-list">
-                              {
-                                   this.breakupMusics.map( (music, index) => (
-                                        <li key={ index }>
-                                             <Card
-                                                  title={ music.title }
-                                                  author={ music.author }
-                                             />
-                                        </li>
-                                   ))
-                              }
-                         </ul>
+                         <MusicList data={ getBreakupMusics() } />
                     </Section>
 
                     <Section 
                          title="Prefere músicas que estarão lá por você?"
                          icon="heart"
                     >
-                         <ul className="music-list">
-                              {
-                                   this.illbethereMusics.map( (music, index) => (
-                                        <li key={ index }>
-                                             <Card
-                                                  title={ music.title }
-                                                  author={ music.author }
-                                             />
-                                        </li>
-                                   ))
-                              }
-                         </ul>
+                         <MusicList data={ getIllbethereMusics() } />
                     </Section>
 
                     <Footer />
