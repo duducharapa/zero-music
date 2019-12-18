@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Button from './button';
 
-class Music extends Component {
+class Card extends Component {
      
      constructor(props){
           super(props);
@@ -35,9 +35,9 @@ class Music extends Component {
      }
 }
 
-Music.propTypes = {
+Card.propTypes = {
      title: PropTypes.string.isRequired,
      author: PropTypes.string.isRequired
 }
 
-export default Music;
+export default Card;

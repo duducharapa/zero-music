@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Apresentation from '../components/apresentation';
 import Section from '../components/section';
-import Music from '../components/music';
+import Card from '../components/card';
 import Footer from '../components/footer';
 
 import { getBreakupMusics, getIllbethereMusics } from '../helpers/music-data';
@@ -28,7 +28,7 @@ class Home extends Component {
                               {
                                    this.breakupMusics.map( (music, index) => (
                                         <li key={ index }>
-                                             <Music
+                                             <Card
                                                   title={ music.title }
                                                   author={ music.author }
                                              />
@@ -46,7 +46,7 @@ class Home extends Component {
                               {
                                    this.illbethereMusics.map( (music, index) => (
                                         <li key={ index }>
-                                             <Music
+                                             <Card
                                                   title={ music.title }
                                                   author={ music.author }
                                              />
