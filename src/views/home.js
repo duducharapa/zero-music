@@ -47,7 +47,22 @@ class Home extends Component {
                     <Section 
                          title="Prefere músicas que estarão lá por você?"
                          icon="heart"
-                    />
+                    >
+                         <ul className="music-list">
+                              <li>
+                                   <Music title="Ill be there for you" author="Ichiko" />
+                              </li>
+                              <li>
+                                   <Music title="Golden Time" author="Yui Hiroe" />
+                              </li>
+                              <li>
+                                   <Music title="Kuchizuke Diamond" author="Weaver" />
+                              </li>
+                              <li>
+                                   <Music title="Your reality" author="Dan Salvato" />
+                              </li>
+                         </ul>
+                    </Section>
 
                     <Footer />
                </div>
