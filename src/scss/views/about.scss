@@ -1,0 +1,66 @@
+div.section-about, div.section-dev {
+     background: $background-color;
+     padding: 5px;
+     word-break: break-word;
+}
+
+div.section-dev {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-start;
+
+     i {
+          font-size: 1.5rem;
+          margin-right: 10px;
+     }
+}
+
+img.section-dev-image {
+     width: 150px;
+}
+
+div.section-dev-info {
+     margin-left: 10px;
+}
+
+h1.section-dev-name {
+     color: $primary-color;
+}
+
+p.section-dev-description, p.section-about-text {
+     color: grey;
+     word-break: break-word;
+     text-align: justify;
+     margin: 5px 0;
+}
+
+li#section-dev-facebook, li#section-dev-gmail, li#section-dev-github {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+li#section-dev-facebook {
+     color: #474787;
+
+     a {
+          color: #474787;
+     }
+}
+
+li#section-dev-gmail {
+     color: #ee5253;
+
+     a {
+          color: #ee5253;
+     }
+}
+
+li#section-dev-github {
+     color: #222f3e;
+
+     a {
+          color: #222f3e;
+     }
+}

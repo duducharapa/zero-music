@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import {
-     BrowserRouter,
-     Switch,
-     Route
-} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
 import './scss/index.scss';
 
 import Home from './views/home';
 import Musics from './views/musics';
+import About from './views/about';
 
 ReactDOM.render(
      <BrowserRouter>
@@ -19,7 +16,10 @@ ReactDOM.render(
                <Route path="/musics">
                     <Musics />
                </Route>
-               <Route path="/">
+               <Route path="/about">
+                    <About />
+               </Route>
+               <Route path="/" exact>
                     <Home />
                </Route>
           </Switch>
