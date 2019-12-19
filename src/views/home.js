@@ -7,7 +7,7 @@ import Section from '../components/section';
 import Footer from '../components/footer';
 import MusicList from '../components/musiclist';
 
-import { getBreakupMusics, getIllbethereMusics } from '../helpers/music-data';
+import { filterMusic } from '../helpers/music-data';
 
 class Home extends Component {
 
@@ -21,14 +21,14 @@ class Home extends Component {
                          title="Dê um Break Up na sua rotina com:"
                          icon="star"
                     >
-                         <MusicList data={ getBreakupMusics() } />
+                         <MusicList data={ filterMusic("breakup") } />
                     </Section>
 
                     <Section 
                          title="Prefere músicas que estarão lá por você?"
                          icon="heart"
                     >
-                         <MusicList data={ getIllbethereMusics() } />
+                         <MusicList data={ filterMusic("illbethere") } />
                     </Section>
 
                     <Footer />

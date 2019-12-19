@@ -8,11 +8,6 @@ img.music-image {
      height: 200px;
 }
 
-div.music-header, div.music-footer {
-     background: $secondary-color;
-     padding: 5px;
-}
-
 h1.music-title {
      color: $brand-color;
      font-weight: 100;
@@ -29,6 +24,11 @@ div.music-footer {
      display: flex;
      flex-direction: column;
      align-items: center;
+}
+
+div.music-header, div.music-footer {
+     background: $secondary-color;
+     padding: 5px;
 }
 
 h1.music-title, h2.music-author {

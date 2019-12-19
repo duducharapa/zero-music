@@ -8,14 +8,20 @@ class MusicList extends Component {
           return (
                <ul className="music-list">
                     {
-                         this.props.data.map( (music, index) => (
-                              <li key={ index }>
-                                   <Card
-                                        title={ music.title }
-                                        author={ music.author }
-                                   />
-                              </li>
-                         ))
+                         this.props.data.length !== 0 ?
+                              this.props.data.map( music => (
+                                   <li key={ music.title }>
+                                        <Card
+                                             title={ music.title }
+                                             author={ music.author }
+                                        />
+                                   </li>
+                              ))
+                         :
+                         <h1 className="music-list-empty">
+                              <i className="far fa-frown" />
+                              Não há nada aqui
+                         </h1>
                     }
                </ul>
           )

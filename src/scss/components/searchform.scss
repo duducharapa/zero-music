@@ -1,0 +1,20 @@
+form.searchform {
+     background: $background-color;
+     display: flex;
+     justify-content: center;
+}
+
+input.searchform-input {
+     margin-top: 10px;
+     width: 70%;
+     height: 30px;
+     padding: 5px;
+     border: solid 1px $primary-color;
+     border-radius: 5px;
+     font-size: 1rem;
+     color: $primary-color;
+     
+     &::placeholder{
+          color: $primary-color;
+     }
+}
