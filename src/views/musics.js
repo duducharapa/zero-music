@@ -12,22 +12,37 @@ import { filterMusic, matchMusic } from '../helpers/music-data';
 
 class Musics extends Component {
      
-     state = {
-          filter: ''
+     constructor(props){
+          const { location } = props;
+          super(props);
+
+          this.state = {
+               filter: location.state.filter ? location.state.filter : ''
+          }
      }
 
      data = filterMusic();
 
-     setFilter = filter => {
-     
+     componentWillUpdate(nextProps, nextState){
+          const { filter } = nextState;
+          
+          this.updateList(filter);
+     }
+
+     updateList = filter => {
           if(filter === '')
                this.data = filterMusic();
           else{
                this.data = matchMusic(filter);
           }
-
-          this.setState({ filter });
      }
+
+     componentWillMount(){
+          if(this.props.location.state)
+               this.updateList(this.props.location.state.filter);
+     }
+
+     setFilter = filter => this.setState({ filter });
 
      render() {
           const { filter } = this.state;

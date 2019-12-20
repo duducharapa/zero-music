@@ -25,7 +25,7 @@ class Music extends Component {
                               <div className="music-info">
                                    <img 
                                         src={ require(`../images/${ ref }.jpg`) } 
-                                        className="music-image" alt={ title }
+                                        className="music-thumb" alt={ title }
                                    />
 
                                    <div className="music-author-content">
