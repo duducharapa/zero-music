@@ -21,9 +21,16 @@ li.footer-menu-item {
      }
 }
 
-a.footer-menu-link {
+button.footer-menu-link {
+     background: none;
+     border: none;
      color: $brand-color;
      font-weight: 100;
+     font-size: 1rem;
+
+     &:hover {
+          cursor: pointer;
+     }
 }
 
 p.footer-credits {

@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { routes } from '../helpers/routes';
 
 export default class Navbar extends Component {     
      
+     state = {
+          clicked: false,
+          path: ''
+     }
+
+     handleClick = path => this.setState({ clicked: true, path });
+
      render() {
           const { location } = this.props;
+          const { clicked, path } = this.state;
 
           return (
                <nav className="navbar">
@@ -15,16 +24,18 @@ export default class Navbar extends Component {
                          {
                               routes.map( ({ text, path }) => (
                                    <li className="navbar-menu-item" key={ text }>
-                                        <a 
+                                        <button 
                                              className={ `navbar-menu-link ${path === location ? 'active' : ''}` } 
-                                             href={ path }
+                                             onClick={ () => this.handleClick(path) }
                                         > 
                                              { text } 
-                                        </a>
+                                        </button>
                                    </li>
                               ))
                          }
                     </ul>
+
+                    { clicked ? <Redirect to={ path } /> : null }
                </nav>
           )
      }

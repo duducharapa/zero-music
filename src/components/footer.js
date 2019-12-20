@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { routes } from '../helpers/routes';
 
 export default class Footer extends Component {
+     
+     state = {
+          clicked: false,
+          path: ''
+     }
+
+     handleClick = path => this.setState({ path, clicked: true });
+     
      render() {
+          const { clicked, path } = this.state;
+
           return (
                <footer>
                     <nav>
@@ -11,9 +22,12 @@ export default class Footer extends Component {
                               {
                                    routes.map( ({ path, text }) => (
                                         <li key={ text } className="footer-menu-item">
-                                             <a href={ path } className="footer-menu-link">
+                                             <button 
+                                                  className="footer-menu-link"
+                                                  onClick={ () => this.handleClick(path) }
+                                             >
                                                   { text }
-                                             </a>
+                                             </button>
                                         </li>
                                    ))
                               }
@@ -22,6 +36,8 @@ export default class Footer extends Component {
                     <p className="footer-credits">
                          Copyright - Eduardo Charapa
                     </p>
+
+                    { clicked ? <Redirect to={ path } /> : null }
                </footer>
           )
      }

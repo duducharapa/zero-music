@@ -36,7 +36,7 @@ export default class Apresentation extends Component {
                               onChange={ this.setMusic } 
                               placeholder="Qual soneto buscas?" 
                               className="apresentation-input"
-                              value={ music }    
+                              value={ music }
                          />
                     </form>
 

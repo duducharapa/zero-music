@@ -13,12 +13,16 @@ a.navbar-brand {
      font-family: $primary-font, cursive;
 }
 
-a.navbar-menu-link {
+button.navbar-menu-link {
+     background: none;
+     border: none;
+     font-size: 1rem;
      color: $secondary-color;
      transition: all 0.3s;
 
      &:hover {
           color: darken($secondary-color, 50%);
+          cursor: pointer;
      }
 }
 

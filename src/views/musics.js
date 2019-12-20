@@ -17,7 +17,7 @@ class Musics extends Component {
           super(props);
 
           this.state = {
-               filter: location.state.filter ? location.state.filter : ''
+               filter: location.state ? location.state.filter : ''
           }
      }
 
