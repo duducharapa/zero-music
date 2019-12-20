@@ -58,7 +58,7 @@ class About extends Component {
                          <div className="section-about">
                               <p className="section-about-text">
                                    O Zero Music é um projeto de portifólio visando melhorar a prática
-                                   no front-end e demonstrar as habilidades já adquiridas. Espero que goste!
+                                   no front-end e demonstrar algumas habilidades já adquiridas. Espero que goste!
                               </p>
                          </div>
                     </Section>

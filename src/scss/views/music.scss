@@ -1,0 +1,48 @@
+div.music {
+     background: $background-color;
+     flex-direction: column;
+     align-items: center;
+     display: flex;
+     padding: 5px;
+}
+
+div.music-info {
+     display: flex;
+     width: 100%;
+     flex-direction: row;
+     justify-content: center;
+     margin: 10px auto;
+}
+
+img.music-image {
+     width: 12rem;
+     margin-right: 10px;
+}
+
+audio.music-player {
+     width: 50%;
+     height: 30px;
+     border: 1px solid $primary-color;
+}
+
+h1.music-author-name, h1,music-author-label {
+     font-weight: 100;
+}
+
+h1.music-author-label {
+     color: $primary-color;
+}
+
+h1.music-author-name {
+     color: $secondary-color;
+}
+
+@media screen and (max-width: 576px){
+     audio.music-player {
+          width: 80%;
+     }
+
+     div.music-info {
+          justify-content: space-around;
+     }
+}
