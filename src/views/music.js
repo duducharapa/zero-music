@@ -13,12 +13,13 @@ class Music extends Component {
      music = getByRef(this.props.location.pathname.split('/').reverse()[0]);
      
      render() {
-          const { title, ref, author } = this.music;
+          const { title, ref, author } = this.music,
+               { pathname } = this.props.location;
           
           return (
                <div>
-                    <Navbar location={ this.props.location.pathname } />
-                    <Apresentation />
+                    <Navbar location={ pathname } />
+                    <Apresentation location={ pathname } />
 
                     <Section title={ title } icon="music">
                          <div className="music">

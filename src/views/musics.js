@@ -45,12 +45,16 @@ class Musics extends Component {
      setFilter = filter => this.setState({ filter });
 
      render() {
-          const { filter } = this.state;
+          const { filter } = this.state,
+               { pathname } = this.props.location;
 
           return (
                <div>
-                    <Navbar location={ this.props.location.pathname } />
-                    <Apresentation />
+                    <Navbar location={ pathname } />
+                    <Apresentation 
+                         setFilter={ filter => this.setFilter(filter) }
+                         location={ pathname }
+                    />
 
                     <Section title="Músicas disponíveis" icon="music">
                          <SearchForm 

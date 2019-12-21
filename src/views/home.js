@@ -12,10 +12,12 @@ import { filterMusic } from '../helpers/music-data';
 class Home extends Component {
 
      render() {
+          const { pathname } = this.props.location;
+
           return (
                <div>
-                    <Navbar location={ this.props.location.pathname } />
-                    <Apresentation />
+                    <Navbar location={ pathname } />
+                    <Apresentation location={ pathname } />
 
                     <Section 
                          title="Dê um Break Up na sua rotina com:"

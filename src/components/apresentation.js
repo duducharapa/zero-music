@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-export default class Apresentation extends Component {
+class Apresentation extends Component {
      
      state = {
           music: '',
@@ -11,7 +12,14 @@ export default class Apresentation extends Component {
      setMusic = event => this.setState({ music: event.target.value });
      
      handleSubmit = event => {
+          const { location } = this.props;
           event.preventDefault();
+
+          if( location.match('/musics') ){
+               this.props.setFilter(this.state.music);
+               this.setState({ music: '' });
+               return;
+          }
 
           this.setState({ redirect: true });
      }
@@ -49,3 +57,10 @@ export default class Apresentation extends Component {
           )
      }
 }
+
+Apresentation.propTypes = {
+     location: PropTypes.string.isRequired,
+     setFilter: PropTypes.func
+}
+
+export default Apresentation;

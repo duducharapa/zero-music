@@ -10,10 +10,12 @@ const devIcon = require('../images/charapa.jpg');
 
 class About extends Component {
      render() {
+          const { pathname } = this.props.location;
+          
           return (
                <div>
-                    <Navbar location={ this.props.location.pathname } />
-                    <Apresentation />
+                    <Navbar location={ pathname } />
+                    <Apresentation location={ pathname } />
 
                     <Section title="One-man army" icon="users">
                          <div className="section-dev">
