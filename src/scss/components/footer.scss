@@ -8,24 +8,17 @@ ul.footer-menu {
      flex-direction: row;
      align-items: center;
      justify-content: center;
-     margin: 5px 0; 
+     margin: 5px 0;
 }
 
 li.footer-menu-item {
      margin: 0 5px;
-
-     &:not(:first-child)::before{
-          content: ' \25CF';
-          color: $brand-color;
-          margin-right: 5px;
-     }
 }
 
 button.footer-menu-link {
      background: none;
      border: none;
      color: $brand-color;
-     font-weight: 100;
      font-size: 1rem;
 
      &:hover {

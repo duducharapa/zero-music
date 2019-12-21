@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 
 import { routes } from '../helpers/routes';
 
+const logoPath = require('../images/louise.png');
+
 export default class Navbar extends Component {     
      
      state = {
@@ -18,7 +20,10 @@ export default class Navbar extends Component {
 
           return (
                <nav className="navbar">
-                    <a className="navbar-brand" href="/"> Zero music </a>
+                    <a className="navbar-brand" href="/">
+                         <img src={ logoPath } alt="Logo" className="navbar-logo" />
+                         Zero music
+                    </a>
 
                     <ul className="navbar-menu">
                          {

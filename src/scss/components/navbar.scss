@@ -7,10 +7,17 @@ nav.navbar {
      padding: 20px 0;
 }
 
+img.navbar-logo {
+     width: 32px;
+     height: 32px;
+}
+
 a.navbar-brand {
      font-size: 1.4rem;
      color: $brand-color;
      font-family: $primary-font, cursive;
+     display: flex;
+     align-items: center;
 }
 
 button.navbar-menu-link {
