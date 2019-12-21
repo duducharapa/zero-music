@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 import Apresentation from '../components/apresentation';
@@ -8,44 +8,90 @@ import Section from '../components/section';
 
 import { getByRef } from '../helpers/music-data';
 
+const notfoundGif = require('../images/notfoundmusic.gif');
+
 class Music extends Component {
      
-     music = getByRef(this.props.location.pathname.split('/').reverse()[0]);
-     
+     constructor(props){
+          super(props);
+          let error = false;
+
+          this.music_info = getByRef(
+               this.props.location.pathname.split('/').reverse()[0]
+          );
+
+          let { ref } = this.music_info;
+
+          try{
+               this.music = require(`../musics/${ ref }.mp3`);
+          }catch(ex){
+               console.log(ex);
+               error = true;
+          }
+
+          this.state = { error, redirect: false };
+     }
+
+     handleClick = () => this.setState({ redirect: true });
+
      render() {
-          const { title, ref, author } = this.music,
-               { pathname } = this.props.location;
+          const { title, ref, author } = this.music_info,
+               { pathname } = this.props.location,
+               { error, redirect } = this.state;
           
           return (
                <div>
                     <Navbar location={ pathname } />
                     <Apresentation location={ pathname } />
 
-                    <Section title={ title } icon="music">
-                         <div className="music">
-                              <div className="music-info">
-                                   <img 
-                                        src={ require(`../images/${ ref }.jpg`) } 
-                                        className="music-thumb" alt={ title }
-                                   />
+                    {
+                         !error ? (
+                              <Section title={ title } icon="music">
+                                   <div className="music">
+                                        <div className="music-info">
+                                             <img 
+                                                  src={ require(`../images/${ ref }.jpg`) } 
+                                                  className="music-thumb" alt={ title }
+                                             />
 
-                                   <div className="music-author-content">
-                                        <h1 className="music-author-label"> Autor: </h1>
-                                        <h1 className="music-author-name"> { author } </h1>
+                                             <div className="music-author-content">
+                                                  <h1 className="music-author-label"> Autor: </h1>
+                                                  <h1 className="music-author-name"> { author } </h1>
+                                             </div>
+                                        </div>
+                                        
+                                        <audio controls className="music-player">
+                                             <source 
+                                                  src={ this.music }
+                                                  type="audio/mp3"
+                                             />
+                                             Your browser not support this audio tag
+                                        </audio>
                                    </div>
-                              </div>
-                              
-                              <audio controls className="music-player">
-                                   <source 
-                                        src={ require(`../musics/${ ref }.mp3`) }
-                                        type="audio/mp3"
-                                   />
-                                   Your browser not support this audio tag
-                              </audio>
-                         </div>
-                    </Section>
+                              </Section>
+                         ) : (
+                              <Section title="Magia desconhecida" icon="times">
+                                   <div className="music">
+                                        <h1 className="music-title-error" > 
+                                             Opa! Parece que essa música ainda não foi encontrada 
+                                        </h1>
+
+                                        <img
+                                             src={ notfoundGif } alt="Not found"
+                                             className="music-gif-error"
+                                        />
+
+                                        <button className="music-btn-error" onClick={ this.handleClick }>
+                                             Voltar as músicas
+                                        </button>
+                                   </div>
+                              </Section>
+                         )
+                    }
 
                     <Footer />
+
+                    { redirect ? <Redirect to="/musics" /> : null }
                </div>
           )
      }

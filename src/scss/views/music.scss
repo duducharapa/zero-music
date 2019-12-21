@@ -37,6 +37,30 @@ h1.music-author-name {
      color: $secondary-color;
 }
 
+h1.music-title-error {
+     color: $primary-color;
+     text-align: center;
+}
+
+img.music-gif-error {
+     margin: 10px auto;
+     max-width: 90%;
+}
+
+button.music-btn-error {
+     padding: 8px;
+     border: none;
+     border-radius: 5px;
+     color: $brand-color;
+     background: $primary-color;
+     transition: all 0.4s;
+
+     &:hover {
+          cursor: pointer;
+          background: darken($primary-color, 20%);
+     }
+}
+
 @media screen and (max-width: 576px){
      audio.music-player {
           width: 80%;
