@@ -1,0 +1,40 @@
+div.notfound {
+    background: $background-color;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.notfound-title {
+    font-size: 2rem;
+    color: $primary-color;
+    font-weight: 100;
+    text-align: center;
+}
+
+img.notfound-gif {
+    margin: 10px auto;
+    max-width: 90%;
+}
+
+button.notfound-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    color: $brand-color;
+    background: $primary-color;
+    transition: all 0.4s;
+
+    &:hover {
+        cursor: pointer;
+        background: darken($primary-color, 20%);
+    }
+}
+
+@media screen and (max-width: 576px){
+    h1.notfound-title {
+        font-size: 1.5rem;
+    }
+
+}
