@@ -1,12 +1,10 @@
 div.section-about, div.section-dev {
-     background: $background-color;
-     padding: 5px;
+     @extend %section;
      word-break: break-word;
 }
 
 div.section-dev {
-     display: flex;
-     flex-direction: row;
+     @extend %flex-row;
      align-items: center;
      justify-content: flex-start;
 
@@ -36,8 +34,7 @@ p.section-dev-description, p.section-about-text {
 }
 
 li#section-dev-facebook, li#section-dev-gmail, li#section-dev-github {
-     display: flex;
-     flex-direction: row;
+     @extend %flex-row;
      align-items: center;
 }
 

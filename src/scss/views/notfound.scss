@@ -1,15 +1,11 @@
 div.notfound {
-    background: $background-color;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
+    @extend %section;
     align-items: center;
 }
 
 h1.notfound-title {
-    font-size: 2rem;
-    color: $primary-color;
-    font-weight: 100;
+    @include title($primary-color, 2rem);
     text-align: center;
 }
 

@@ -5,14 +5,13 @@ form.searchform {
 }
 
 input.searchform-input {
+     @include title($primary-color, 1rem, initial);
      margin-top: 10px;
      width: 70%;
      height: 30px;
      padding: 5px;
      border: solid 1px $primary-color;
      border-radius: 5px;
-     font-size: 1rem;
-     color: $primary-color;
      
      &::placeholder{
           color: $primary-color;

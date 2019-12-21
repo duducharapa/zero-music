@@ -1,9 +1,8 @@
 nav.navbar {
+     @extend %flex-row;
      background: $primary-color;
-     display: flex;
      align-items: center;
      justify-content: space-around;
-     flex-direction: row;
      padding: 20px 0;
 }
 
@@ -13,18 +12,16 @@ img.navbar-logo {
 }
 
 a.navbar-brand {
-     font-size: 1.4rem;
-     color: $brand-color;
+     @extend %flex-row;
+     @include title($brand-color, 1.4rem, initial);
      font-family: $primary-font, cursive;
-     display: flex;
      align-items: center;
 }
 
 button.navbar-menu-link {
+     @include title($secondary-color, 1rem, initial);
      background: none;
      border: none;
-     font-size: 1rem;
-     color: $secondary-color;
      transition: all 0.3s;
 
      &:hover {

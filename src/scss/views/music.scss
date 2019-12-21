@@ -1,15 +1,12 @@
 div.music {
-     background: $background-color;
-     flex-direction: column;
+     @extend %flex-column;
+     @extend %section;
      align-items: center;
-     display: flex;
-     padding: 5px;
 }
 
 div.music-info {
-     display: flex;
+     @extend %flex-row;
      width: 100%;
-     flex-direction: row;
      justify-content: center;
      margin: 10px auto;
 }

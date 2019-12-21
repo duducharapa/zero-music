@@ -4,8 +4,7 @@ footer {
 }
 
 ul.footer-menu {
-     display: flex;
-     flex-direction: row;
+     @extend %flex-row;
      align-items: center;
      justify-content: center;
      margin: 5px 0;

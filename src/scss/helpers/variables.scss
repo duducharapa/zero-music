@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto&display=swap');
 
+@mixin title($color: black, $font-size: initial, $font-weight: 100){
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
 $primary-color: #52489C;
 $secondary-color: #AB87FF;
 $terciary-color: #C6962D;
@@ -9,3 +15,18 @@ $brand-color: #EFF8E2;
 
 $primary-font: 'Dancing script';
 $secondary-font: 'Roboto';
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+%section {
+    background: $background-color;
+    padding: 5px;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}

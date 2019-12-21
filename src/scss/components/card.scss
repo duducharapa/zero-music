@@ -9,20 +9,15 @@ img.music-image {
 }
 
 h1.music-title {
-     color: $brand-color;
-     font-weight: 100;
-     font-size: 1.2rem;
+     @include title($brand-color, 1.2rem);
 }
 
 h2.music-author {
-     color: $primary-color;
-     font-weight: 100;
-     font-size: 1rem;
+     @include title($primary-color, 1rem);
 }
 
 div.music-footer {
-     display: flex;
-     flex-direction: column;
+     @extend %flex-column;
      align-items: center;
 }
 
