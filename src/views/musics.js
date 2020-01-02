@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import Apresentation from '../components/Apresentation';
 import Section from '../components/section';
 import MusicList from '../components/Musiclist';
-import SearchForm from '../components/searchform';
+import SearchForm from '../components/Searchform';
 
 import { filterMusic, matchMusic } from '../helpers/music-data';
 
