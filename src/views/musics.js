@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
-import Apresentation from '../components/apresentation';
+import Apresentation from '../components/Apresentation';
 import Section from '../components/section';
 import MusicList from '../components/musiclist';
 import SearchForm from '../components/searchform';

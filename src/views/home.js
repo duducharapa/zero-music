@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
-import Apresentation from '../components/apresentation';
+import Apresentation from '../components/Apresentation';
 import Section from '../components/section';
 import Footer from '../components/footer';
 import MusicList from '../components/musiclist';

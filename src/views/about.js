@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Section from '../components/section';
-import Apresentation from '../components/apresentation';
+import Apresentation from '../components/Apresentation';
 
 const devIcon = require('../images/charapa.jpg');
 
