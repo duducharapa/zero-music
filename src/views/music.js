@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 import Apresentation from '../components/Apresentation';
 import Footer from '../components/Footer';
 import Section from '../components/section';
