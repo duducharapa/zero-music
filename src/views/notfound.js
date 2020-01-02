@@ -4,7 +4,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Apresentation from '../components/Apresentation';
 import Footer from '../components/Footer';
-import Section from '../components/section';
+import Section from '../components/Section';
 
 const notfoundPath = require('../images/notfound.gif');
 

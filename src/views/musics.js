@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Apresentation from '../components/Apresentation';
-import Section from '../components/section';
+import Section from '../components/Section';
 import MusicList from '../components/Musiclist';
 import SearchForm from '../components/Searchform';
 

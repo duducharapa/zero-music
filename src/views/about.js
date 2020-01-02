@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Section from '../components/section';
+import Section from '../components/Section';
 import Apresentation from '../components/Apresentation';
 
 const devIcon = require('../images/charapa.jpg');
