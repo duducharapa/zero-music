@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 export function Apresentation({ setFilter,location }){
 
-     // State
+     // States
      const [ music, setMusic ] = useState("");
      const [ redirect, setRedirect ] = useState(false);
 

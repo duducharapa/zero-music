@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Apresentation from '../components/Apresentation';
 import Section from '../components/section';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 import MusicList from '../components/musiclist';
 
 import { filterMusic } from '../helpers/music-data';
