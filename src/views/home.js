@@ -5,7 +5,7 @@ import Navbar from '../components/navbar';
 import Apresentation from '../components/Apresentation';
 import Section from '../components/section';
 import Footer from '../components/Footer';
-import MusicList from '../components/musiclist';
+import MusicList from '../components/Musiclist';
 
 import { filterMusic } from '../helpers/music-data';
 
