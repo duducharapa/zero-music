@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
 import './scss/index.scss';
 
-import Home from './views/home';
+import Home from './views/Home';
 import Musics from './views/musics';
 import About from './views/About';
 import Music from './views/music';
