@@ -7,7 +7,7 @@ import './index.css';
 import './scss/index.scss';
 
 import Home from './views/Home';
-import Musics from './views/musics';
+import Musics from './views/Musics';
 import About from './views/About';
 import Music from './views/music';
 import NotFound from './views/Notfound';
