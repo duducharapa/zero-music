@@ -10,7 +10,7 @@ import Home from './views/Home';
 import Musics from './views/musics';
 import About from './views/About';
 import Music from './views/music';
-import NotFound from './views/notfound';
+import NotFound from './views/Notfound';
 
 ReactDOM.render(
      <BrowserRouter>
