@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledButton = styled.a`
-     background: ${ ({ color }) => color };
-     padding: 5px;
+     background-color: ${ ({ colors }) => colors[0] };
+     padding: 7px;
      color: #EFF8E2;
-     transition: all 0.4s;
+     transition: background-color 0.4s;
 
      &:hover {
-          background: darken(${ ({ color }) => color },20%);
+          background-color: ${ ({ colors }) => colors[1] };
           cursor: pointer;
      }
 
@@ -18,9 +18,9 @@ const StyledButton = styled.a`
      }
 `;
 
-export function Button({ onClick, icon, text, color = "#52489C" }){
+export function Button({ onClick, icon, text, colors = ["#52489C","#2D2856"] }){
      return(
-          <StyledButton color={ color } onClick={ onClick }>
+          <StyledButton colors={ colors } onClick={ onClick }>
                {
                     icon ?
                     <i className={ `fas fa-${icon}` } />
@@ -36,5 +36,5 @@ Button.propTypes = {
      onClick: PropTypes.func,
      icon: PropTypes.string,
      text: PropTypes.string.isRequired,
-     color: PropTypes.string
+     colors: PropTypes.arrayOf(PropTypes.string)
 }
