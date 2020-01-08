@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import { routes } from '../../helpers/routes';
 import styled from 'styled-components';
+
+import Link from '../Link';
 
 // Styled Components
 const StyledFooter = styled.footer`
@@ -20,17 +21,6 @@ const StyledFooter = styled.footer`
           }
      }
 
-     button {
-          background: none;
-          border: none;
-          color: #EFF8E2;
-          font-size: 1rem;
-
-          &:hover {
-               cursor: pointer;
-          }
-     }
-
      p {
           text-align: center;
           color: #C6962D;
@@ -39,33 +29,19 @@ const StyledFooter = styled.footer`
 
 export function Footer(){
 
-     // States
-     const [ clicked, setClick ] = useState(false);
-     const [ path, setPath ] = useState("");
-
-     // Handle functions
-     const handleClick = path => {
-          setPath(path);
-          setClick(true);
-     }
-
      return (
           <StyledFooter>
                <ul>
                     {
                          routes.map( ({ path, text }) => (
                               <li key={ text }>
-                                   <button onClick={ () => handleClick(path) }>
-                                        { text }
-                                   </button>
+                                   <Link to={ path } text={ text } />
                               </li>
                          ))
                     }
                </ul>
 
                <p> Copyright - Eduardo Charapa </p>
-
-               { clicked ? <Redirect to={ path } /> : null }
           </StyledFooter>
      );
 
