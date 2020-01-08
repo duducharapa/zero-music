@@ -15,7 +15,7 @@ export function Footer(){
      }
 
      return (
-          <footer>
+          <footer className="footer">
                <nav>
                     <ul className="footer-menu">
                          {
