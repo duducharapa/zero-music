@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Apresentation from '../../components/Apresentation';
 import Footer from '../../components/Footer';
 import Section from '../../components/Section';
+import Button from '../../components/Button';
 
 const notfoundPath = require('../../images/notfound.gif');
 
@@ -31,10 +32,10 @@ export function NotFound({ location }){
                     <img 
                         src={ notfoundPath } alt="Not found" className="notfound-gif"
                     />
-
-                    <button className="notfound-btn" onClick={ handleClick }>
-                        Voltar a página inicial
-                    </button>
+                    
+                    <Button 
+                        onClick={ handleClick } text="Voltar a página inicial"
+                    />
                 
                     { clicked ? <Redirect to="/" /> : null }
                 </div>

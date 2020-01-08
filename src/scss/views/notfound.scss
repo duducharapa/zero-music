@@ -14,20 +14,6 @@ img.notfound-gif {
     max-width: 90%;
 }
 
-button.notfound-btn {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    color: $brand-color;
-    background: $primary-color;
-    transition: all 0.4s;
-
-    &:hover {
-        cursor: pointer;
-        background: darken($primary-color, 20%);
-    }
-}
-
 @media screen and (max-width: 576px){
     h1.notfound-title {
         font-size: 1.5rem;
