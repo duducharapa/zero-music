@@ -29,8 +29,8 @@ export function Music({ location }){
      
                const { title, filename } = apiResponse.data;
      
-               imageURL.current = `http://localhost:8000/images/${ filename }.jpg`;
-               musicURL.current = `http://localhost:8000/musics/${ filename }.mp3`;
+               imageURL.current = `http://https://zero-music-api.herokuapp.com/images/${ filename }.jpg`;
+               musicURL.current = `http://https://zero-music-api.herokuapp.com/musics/${ filename }.mp3`;
                
                return setMusic(title);
           }
