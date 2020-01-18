@@ -50,7 +50,7 @@ const StyledArticle = styled.article`
 
 export function Card({ title, author, filename }){
      const path = `/music/${filename}`;
-     const imageURL = `http://localhost:8000/images/${ filename }.jpg`;
+     const imageURL = `https://zero-music-api.herokuapp.com/images/${ filename }.jpg`;
 
      // States
      const [ clicked, setClick ] = useState(false);
