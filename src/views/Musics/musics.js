@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -6,24 +6,46 @@ import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import MusicList from '../../components/Musiclist';
 import SearchForm from '../../components/Searchform';
-
-import { filterMusic, matchMusic } from '../../helpers/music-data';
+import api from '../../services/api';
 
 export function Musics({ location }){
      const { pathname } = location;
+     const ref = useRef(false);
+     const data = useRef([]);
 
      // States
-     const [ data, setData ] = useState(filterMusic);
+     const [ musics, setMusics ] = useState([]);
      const [ filter, setFilter ] = useState(
           location.state ? location.state.filter : ''
      );
 
-     // Update function
-     const updateList = () => {
-          setData(filter === '' ? filterMusic() : matchMusic(filter));
-     }
+     useEffect(() => {
+          async function getData(){
+               const musics = await api.get('/music');
 
-     useEffect( updateList, [filter] );
+               data.current = musics.data;
+               return;
+          }
+
+          function filterMusics(){
+               if(filter === ''){
+                    setMusics(data.current);
+               }else{
+                    let filteredData = data.current.filter(item => {
+                         return item.title.match(filter);
+                    });
+
+                    setMusics(filteredData);
+               }
+          }
+          
+          if(!ref.current){
+               setTimeout(getData, 1000);
+               ref.current = true;
+          }
+               
+          filterMusics();
+     }, [filter]);
 
      return (
           <div>
@@ -36,15 +58,13 @@ export function Musics({ location }){
                <Section title="Músicas disponíveis" icon="music">
                     <SearchForm 
                          filter={ filter } 
-                         setFilter={ filter => setFilter(filter) } 
+                         setFilter={ filter => setFilter(filter) }
                     />
 
-                    <MusicList data={ data } />
+                    <MusicList data={ musics } />
                </Section>
 
-               <Section title="Recomendadas" icon="thumbs-up">
-                    <MusicList data={ filterMusic("recommended") } />
-               </Section>
+               
 
                <Footer />
           </div>
