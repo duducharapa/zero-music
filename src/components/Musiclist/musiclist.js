@@ -14,7 +14,9 @@ export function MusicList({ data }){
                          data.map(music => (
                               <li key={ music.title }>
                                    <Card
-                                        title={ music.title } author={ music.author }
+                                        title={ music.title } 
+                                        author={ music.author }
+                                        filename={ music.filename }
                                    />
                               </li>
                          ))

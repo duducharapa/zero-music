@@ -9,7 +9,7 @@ import './scss/index.scss';
 import Home from './views/Home';
 import Musics from './views/Musics';
 import About from './views/About';
-import Music from './views/music';
+import Music from './views/Music';
 import NotFound from './views/Notfound';
 
 ReactDOM.render(

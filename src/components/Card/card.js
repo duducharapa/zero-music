@@ -48,30 +48,29 @@ const StyledArticle = styled.article`
      }
 `;
 
-export function Card({ title, author }){
-     const imgName = title.toLowerCase().split(' ').join('-');
-     const image = require(`../../images/${imgName}.jpg`);
-     const path = `/music/${imgName}`;
+export function Card({ title, author, filename }){
+     const path = `/music/${filename}`;
+     const imageURL = `http://localhost:8000/images/${ filename }.jpg`;
 
      // States
      const [ clicked, setClick ] = useState(false);
 
      // Handle functions
      const handleClick = () => setClick(true);
+
      return(
           <StyledArticle>
                <header>
                     <h1> { title } </h1>
                </header>
 
-               <img src={ image } alt={ title } />
+               <img alt={ title } src={ imageURL } />
                
                <footer>
                     <h2> { author } </h2>
                     
                     <StyledButton
-                         text="Ouvir" onClick={ handleClick }
-                         icon="headphones"
+                         text="Ouvir" onClick={ handleClick } icon="headphones"
                     />
                </footer>
 
@@ -82,5 +81,6 @@ export function Card({ title, author }){
 
 Card.propTypes = {
      title: PropTypes.string.isRequired,
-     author: PropTypes.string.isRequired
+     author: PropTypes.string.isRequired,
+     filename: PropTypes.string.isRequired
 }
