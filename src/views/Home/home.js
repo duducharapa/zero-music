@@ -16,7 +16,7 @@ export function Home({ location }){
      ];
      
      const [{ data, loading }] = useAxios(
-          'http://zero-music-api.herokuapp.com/section'
+          'https://zero-music-api.herokuapp.com/section'
      );
 
      return (

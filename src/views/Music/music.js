@@ -12,7 +12,7 @@ const notfoundGif = require('../../images/notfoundmusic.gif');
 export function Music({ location }){
      const { pathname } = location;
      const [{ loading, data, error }] = useAxios(
-          `http://zero-music-api.herokuapp.com/music/${ pathname }`
+          `https://zero-music-api.herokuapp.com/music/${ pathname }`
      );
 
      // States
@@ -53,7 +53,7 @@ export function Music({ location }){
                               <div className="music">
                                    <div className="music-info">
                                         <img 
-                                             src={ `http://zero-music-api.herokuapp.com/images/${ data.filename }` } 
+                                             src={ `https://zero-music-api.herokuapp.com/images/${ data.filename }` } 
                                              alt={ data.title }
                                              className="music-thumb" 
                                         />
@@ -66,7 +66,7 @@ export function Music({ location }){
                                    
                                    <audio controls className="music-player">
                                         <source 
-                                             src={ `http://zero-music-api.herokuapp.com/musics/${ data.filename }` }
+                                             src={ `https://zero-music-api.herokuapp.com/musics/${ data.filename }` }
                                              type="audio/mp3"
                                         />
                                         Your browser not support this audio tag

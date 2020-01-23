@@ -13,7 +13,7 @@ export function Musics({ location }){
      const { pathname } = location;
      
      const [{ data,loading }] = useAxios(
-          'http://zero-music-api.herokuapp.com/musics'
+          'https://zero-music-api.herokuapp.com/musics'
      );
 
      // States
