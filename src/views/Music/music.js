@@ -12,7 +12,7 @@ const notfoundGif = require('../../images/notfoundmusic.gif');
 export function Music({ location }){
      const { pathname } = location;
      const [{ loading, data, error }] = useAxios(
-          `https://zero-music-api.herokuapp.com/music/${ pathname }`
+          `https://zero-music-api.herokuapp.com/${ pathname }`
      );
 
      // States
