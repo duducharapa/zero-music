@@ -1,46 +1,25 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
+import useAxios from 'axios-hooks';
 import { Redirect } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
 import Apresentation from '../../components/Apresentation';
 import Footer from '../../components/Footer';
 import Section from '../../components/Section';
-import api from '../../services/api';
 
 const notfoundGif = require('../../images/notfoundmusic.gif');
 
 export function Music({ location }){
      const { pathname } = location;
-
-     const ref = useRef(false);
-     const musicURL = useRef('');
-     const imageURL = useRef('');
+     const [{ loading, data, error }] = useAxios(
+          `http://zero-music-api.herokuapp.com/music/${ pathname }`
+     );
 
      // States
-     const [ music, setMusic ] = useState(null);
      const [ clicked, setClick ] = useState(false);
 
      // Handle functions
      const handleClick = () => setClick(true);
-
-     useEffect(() => {
-          async function getData(){
-               let apiResponse = await api.get(pathname);
-     
-               const { title, filename } = apiResponse.data;
-     
-               imageURL.current = `http://https://zero-music-api.herokuapp.com/images/${ filename }.jpg`;
-               musicURL.current = `http://https://zero-music-api.herokuapp.com/musics/${ filename }.mp3`;
-               
-               return setMusic(title);
-          }
-          
-          if(!ref.current){
-               setTimeout(getData, 1000);
-
-               ref.current = true;
-          }
-     },[pathname,music]);
      
      return(
           <div>
@@ -48,33 +27,11 @@ export function Music({ location }){
                <Apresentation location={ pathname } />
 
                {
-                    !ref.current ? (
-                         <h1> loading </h1>
-                    ) : music ? (
-                         <Section title={ music } icon="music">
-                              <div className="music">
-                                   <div className="music-info">
-                                        <img 
-                                             src={ imageURL.current } alt={ music.title }
-                                             className="music-thumb" 
-                                        />
-
-                                        <div className="music-author-content">
-                                             <h1 className="music-author-label"> Autor: </h1>
-                                             <h1 className="music-author-name"> { music.author } </h1>
-                                        </div>
-                                   </div>
-                                   
-                                   <audio controls className="music-player">
-                                        <source 
-                                             src={ musicURL.current }
-                                             type="audio/mp3"
-                                        />
-                                        Your browser not support this audio tag
-                                   </audio>
-                              </div>
+                    loading ? (
+                         <Section title="Carregando" icon="music">
+                              <h1> carregando </h1>
                          </Section>
-                    ) : (
+                    ) : error ? (
                          <Section title="Magia desconhecida" icon="times">
                               <div className="music">
                                    <h1 className="music-title-error" > 
@@ -89,6 +46,31 @@ export function Music({ location }){
                                    <button className="music-btn-error" onClick={ handleClick }>
                                         Voltar as músicas
                                    </button>
+                              </div>
+                         </Section>
+                    ) : (
+                         <Section title={ data.title } icon="music">
+                              <div className="music">
+                                   <div className="music-info">
+                                        <img 
+                                             src={ `http://zero-music-api.herokuapp.com/images/${ data.filename }` } 
+                                             alt={ data.title }
+                                             className="music-thumb" 
+                                        />
+
+                                        <div className="music-author-content">
+                                             <h1 className="music-author-label"> Autor: </h1>
+                                             <h1 className="music-author-name"> { data.author } </h1>
+                                        </div>
+                                   </div>
+                                   
+                                   <audio controls className="music-player">
+                                        <source 
+                                             src={ `http://zero-music-api.herokuapp.com/musics/${ data.filename }` }
+                                             type="audio/mp3"
+                                        />
+                                        Your browser not support this audio tag
+                                   </audio>
                               </div>
                          </Section>
                     )

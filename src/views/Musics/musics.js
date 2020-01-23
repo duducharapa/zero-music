@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import useAxios from 'axios-hooks';
+import ReactLoading from 'react-loading';
 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -6,12 +8,13 @@ import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import MusicList from '../../components/Musiclist';
 import SearchForm from '../../components/Searchform';
-import api from '../../services/api';
 
 export function Musics({ location }){
      const { pathname } = location;
-     const ref = useRef(false);
-     const data = useRef([]);
+     
+     const [{ data,loading }] = useAxios(
+          'http://zero-music-api.herokuapp.com/musics'
+     );
 
      // States
      const [ musics, setMusics ] = useState([]);
@@ -20,18 +23,11 @@ export function Musics({ location }){
      );
 
      useEffect(() => {
-          async function getData(){
-               const musics = await api.get('/music');
-
-               data.current = musics.data;
-               return;
-          }
-
           function filterMusics(){
                if(filter === ''){
-                    setMusics(data.current);
+                    setMusics(data);
                }else{
-                    let filteredData = data.current.filter(item => {
+                    let filteredData = data.filter(item => {
                          return item.title.match(filter);
                     });
 
@@ -39,13 +35,10 @@ export function Musics({ location }){
                }
           }
           
-          if(!ref.current){
-               setTimeout(getData, 1000);
-               ref.current = true;
-          }
+          if(data)
+               filterMusics();
                
-          filterMusics();
-     }, [filter]);
+     }, [filter,data]);
 
      return (
           <div>
@@ -61,7 +54,16 @@ export function Musics({ location }){
                          setFilter={ filter => setFilter(filter) }
                     />
 
-                    <MusicList data={ musics } />
+                    {
+                         loading ? (
+                              <ReactLoading 
+                                   color="#52489C" type="bubbles"
+                                   width={ 100 } height={ 30 }
+                              />
+                         ) : (
+                              <MusicList data={ musics } />
+                         )
+                    }
                </Section>
 
                
