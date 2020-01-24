@@ -6,13 +6,14 @@ import Navbar from '../../components/Navbar';
 import Apresentation from '../../components/Apresentation';
 import Footer from '../../components/Footer';
 import Section from '../../components/Section';
+import parseLocation from '../../utils/parseLocation';
 
 const notfoundGif = require('../../images/notfoundmusic.gif');
 
 export function Music({ location }){
      const { pathname } = location;
      const [{ loading, data, error }] = useAxios(
-          `https://zero-music-api.herokuapp.com/${ pathname }`
+          `https://zero-music-api.herokuapp.com/music/${ parseLocation(pathname) }`
      );
 
      // States
@@ -31,7 +32,7 @@ export function Music({ location }){
                          <Section title="Carregando" icon="music">
                               <h1> carregando </h1>
                          </Section>
-                    ) : error ? (
+                    ) : error || !data ? (
                          <Section title="Magia desconhecida" icon="times">
                               <div className="music">
                                    <h1 className="music-title-error" > 
@@ -53,7 +54,7 @@ export function Music({ location }){
                               <div className="music">
                                    <div className="music-info">
                                         <img 
-                                             src={ `https://zero-music-api.herokuapp.com/images/${ data.filename }` } 
+                                             src={ `https://zero-music-api.herokuapp.com/images/${ data.filename }.jpg` } 
                                              alt={ data.title }
                                              className="music-thumb" 
                                         />
@@ -66,7 +67,7 @@ export function Music({ location }){
                                    
                                    <audio controls className="music-player">
                                         <source 
-                                             src={ `https://zero-music-api.herokuapp.com/musics/${ data.filename }` }
+                                             src={ `https://zero-music-api.herokuapp.com/musics/${ data.filename }.mp3` }
                                              type="audio/mp3"
                                         />
                                         Your browser not support this audio tag
