@@ -1,13 +1,14 @@
 import React from 'react';
 import { routes } from '../../helpers/routes';
 import styled from 'styled-components';
+import { primaryColor, secondaryColor, terciaryColor } from '../../utils/colors';
 
 import Link from '../Link';
 
 // Styled Components
 const StyledFooter = styled.footer`
      padding: 50px 0px 5px 0px;
-     background: linear-gradient(#AB87FF,#52489C);
+     background: linear-gradient(${ secondaryColor },${ primaryColor });
 
      ul {
           display: flex;
@@ -23,7 +24,7 @@ const StyledFooter = styled.footer`
 
      p {
           text-align: center;
-          color: #C6962D;
+          color: ${ terciaryColor };
      }
 `;
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { textColor } from '../../utils/colors';
 
 // Styled Components
 const StyledButton = styled.a`
      background-color: ${ ({ colors }) => colors[0] };
      padding: 7px;
-     color: #EFF8E2;
+     color: ${ textColor };
      transition: background-color 0.4s;
 
      &:hover {

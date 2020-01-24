@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { secondaryColor, textColor } from '../../utils/colors';
 
 import Button from '../Button';
 
@@ -15,12 +16,15 @@ const StyledArticle = styled.article`
      width: 200px;
      margin-bottom: 20px;
 
+     header, footer {
+          background-color: ${ secondaryColor }
+     }
+
      header {
-          background-color: #AB87FF;
           padding: 5px;
 
           h1 {
-               color: #EFF8E2;
+               color: ${ textColor };
                font-size: 1.2rem;
                text-align: center;
           }
@@ -32,7 +36,6 @@ const StyledArticle = styled.article`
      }
 
      footer {
-          background-color: #AB87FF;
           padding: 5px;
           display: flex;
           flex-direction: column;
@@ -41,7 +44,7 @@ const StyledArticle = styled.article`
           h2 {
                font-size: 1rem;
                text-align: center;
-               color: #EFF8E2;
+               color: ${ textColor };
                font-weight: 100;
                margin-bottom: 3px;
           }
