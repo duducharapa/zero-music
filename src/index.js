@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
@@ -23,5 +22,3 @@ ReactDOM.render(
           </Switch>
      </BrowserRouter>
 , document.getElementById('root'));
-
-serviceWorker.unregister();
