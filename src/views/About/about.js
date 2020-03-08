@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 import Apresentation from '../../components/Apresentation';
+import SocialLink from '../../components/SocialLink';
 
 const devIcon = require('../../images/charapa.jpg');
 
@@ -31,23 +32,23 @@ export function About({ location }){
                               </p>
 
                               <ul>
-                                   <li id="section-dev-facebook">
-                                        <i className="fab fa-facebook-square" />
-                                        <a href="https://facebook.com/eduardo.charapa">
-                                             Eduardo Charapa
-                                        </a>
+                                   <li>
+                                        <SocialLink 
+                                             icon="facebook" link="https://facebook.com/eduardo.charapa" text="Eduardo Charapa"
+                                             color="#474787"
+                                        />
                                    </li>
-                                   <li id="section-dev-gmail">
-                                        <i className="fas fa-envelope" /> 
-                                        <a href="mailto:eduardocharapa@gmail.com">
-                                             Eduardocharapa@gmail.com
-                                        </a>
+                                   <li>
+                                        <SocialLink 
+                                             icon="email" link="mailto:eduardocharapa@gmail.com" text="Eduardocharapa@gmail.com"
+                                             color="#ee5253"
+                                        />
                                    </li>
-                                   <li id="section-dev-github">
-                                        <i className="fab fa-github-alt" />
-                                        <a href="https://github.com/duducharapa">
-                                             Duducharapa
-                                        </a>
+                                   <li>
+                                        <SocialLink 
+                                             icon="github" link="https://github.com/duducharapa" text="Eduardocharapa@gmail.com"
+                                             color="#222f3e"
+                                        />
                                    </li>
                               </ul>
                          </div>

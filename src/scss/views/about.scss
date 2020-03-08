@@ -32,32 +32,3 @@ p.section-dev-description, p.section-about-text {
      text-align: justify;
      margin: 5px 0;
 }
-
-li#section-dev-facebook, li#section-dev-gmail, li#section-dev-github {
-     @extend %flex-row;
-     align-items: center;
-}
-
-li#section-dev-facebook {
-     color: #474787;
-
-     a {
-          color: #474787;
-     }
-}
-
-li#section-dev-gmail {
-     color: #ee5253;
-
-     a {
-          color: #ee5253;
-     }
-}
-
-li#section-dev-github {
-     color: #222f3e;
-
-     a {
-          color: #222f3e;
-     }
-}
