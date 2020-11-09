@@ -1,11 +1,10 @@
 # Zero Music
 
 ## O que é o Zero Music?
-Zero music é um projeto que visa
-disponibilizar algumas músicas(voltadas ao mundo dos animes) tanto para download quanto apenas para escutar caso deseje.
+Zero music é um projeto que visa disponibilizar algumas músicas(voltadas ao mundo dos animes) tanto para download quanto apenas para escutar caso deseje.
 
 ## Em que é feito?
-O projeto foi criado em React.js e utilizado SASS para estilização. Futuramente, será integrada uma camada e back-end ao projeto.
+O projeto foi criado em React e utilizado SASS para alguns recursos na estilização.
 
 ## Imagens do projeto
 
@@ -20,7 +19,3 @@ O projeto foi criado em React.js e utilizado SASS para estilização. Futurament
 ![zero-music-04](https://user-images.githubusercontent.com/47173483/71311179-3c61e200-23fc-11ea-8712-ef99bc5e326d.png)
 
 ![zero-music-05](https://user-images.githubusercontent.com/47173483/71311196-7c28c980-23fc-11ea-8f7f-4e5318c7d0b0.png)
-
-
-## Online
-* A aplicação está online no seguinte link [Zero Music](http://www.zeromusic.ga)
