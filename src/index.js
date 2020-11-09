@@ -12,13 +12,14 @@ import Music from './views/Music';
 import NotFound from './views/Notfound';
 
 ReactDOM.render(
-     <BrowserRouter>
-          <Switch>
-               <Route path="/music/:music" component={ Music } />
-               <Route path="/musics" exact component={ Musics } />
-               <Route path="/about" exact component={ About } />
-               <Route path="/" exact component={ Home } />
-               <Route component={ NotFound } />
-          </Switch>
-     </BrowserRouter>
-, document.getElementById('root'));
+  <BrowserRouter>
+    <Switch>
+      <Route path="/music/:music" component={Music} />
+      <Route path="/musics" exact component={Musics} />
+      <Route path="/about" exact component={About} />
+      <Route path="/" exact component={Home} />
+      <Route component={NotFound} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
