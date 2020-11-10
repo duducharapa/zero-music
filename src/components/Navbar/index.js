@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import { darken } from 'polished';
@@ -46,8 +45,8 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  a.active {
-      color: ${darken(0.5, secondaryColor)};
+  button.active {
+    color: ${darken(0.5, secondaryColor)};
   }
 
   ul {
@@ -67,7 +66,8 @@ const StyledNavbar = styled.nav`
   }
 `;
 
-function Navbar({ location }) {
+function Navbar() {
+  const { location } = window;
   const [clicked, setClick] = useState(false);
   const [path, setPath] = useState('');
 
@@ -84,11 +84,11 @@ function Navbar({ location }) {
       </a>
       <ul>
         {
-          routes.map(({ text, route }) => (
+          routes.map(({ text, path: route }) => (
             <li key={text}>
               <button
                 type="button"
-                className={`link ${path === location ? 'active' : ''}`}
+                className={`link ${route === location ? 'active' : ''}`}
                 onClick={() => handleClick(route)}
               >
                 {text}
@@ -101,9 +101,5 @@ function Navbar({ location }) {
     </StyledNavbar>
   );
 }
-
-Navbar.propTypes = {
-  location: PropTypes.string.isRequired,
-};
 
 export default Navbar;

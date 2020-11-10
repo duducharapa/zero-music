@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
-import PropTypes from 'prop-types';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-import Navbar from '../../components/Navbar';
 import Apresentation from '../../components/Apresentation';
-import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 import parseLocation from '../../utils/parseLocation';
 
 const notfoundGif = require('../../images/notfoundmusic.gif');
 
-function Music({ location }) {
-  const { pathname } = location;
+function Music() {
+  const { pathname } = window.location;
   const [{ loading, data, error }] = useAxios(
     `https://zero-music-api.herokuapp.com/music/${parseLocation(pathname)}`,
   );
@@ -21,8 +18,7 @@ function Music({ location }) {
 
   return (
     <div>
-      <Navbar location={pathname} />
-      <Apresentation location={pathname} />
+      <Apresentation />
 
       {
         // TODO: Remover este ternário aninhado
@@ -85,14 +81,9 @@ function Music({ location }) {
               </Section>
             )
       }
-      <Footer />
       { clicked ? <Redirect to="/musics" /> : null }
     </div>
   );
 }
 
-Music.propTypes = {
-  location: PropTypes.string.isRequired,
-};
-
-export default withRouter(Music);
+export default Music;

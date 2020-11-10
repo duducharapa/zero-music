@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
 import './scss/index.scss';
 
+import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Musics from './views/Musics';
 import About from './views/About';
@@ -13,6 +14,7 @@ import NotFound from './views/Notfound';
 
 ReactDOM.render(
   <BrowserRouter>
+    <Navbar />
     <Switch>
       <Route path="/music/:music" component={Music} />
       <Route path="/musics" exact component={Musics} />

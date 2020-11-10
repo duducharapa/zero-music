@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -73,9 +72,10 @@ const StyledApresentation = styled.div`
   }
 `;
 
-function Apresentation({ setFilter, location }) {
+function Apresentation() {
   const [music, setMusic] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const { pathname } = window.location;
 
   const handleChange = (event) => {
     setMusic(event.target.value);
@@ -83,15 +83,6 @@ function Apresentation({ setFilter, location }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Conversa com o form caso o location atual seja /musics
-    if (location.match('/musics')) {
-      setFilter(music);
-      setMusic('');
-
-      return;
-    }
-
     setRedirect(true);
   };
 
@@ -101,15 +92,19 @@ function Apresentation({ setFilter, location }) {
         <h1 className="name"> Zero Music </h1>
         <h1 className="subname"> A mágica da música está aqui! </h1>
       </div>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          placeholder="Qual soneto buscas?"
-          value={music}
-        />
-      </form>
-
+      {
+        !pathname.match('/musics')
+          ? (
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                placeholder="Qual soneto buscas?"
+                value={music}
+              />
+            </form>
+          )
+          : null
+      }
       {
         redirect
           ? <Redirect to={{ pathname: '/musics', state: { filter: music } }} />
@@ -118,14 +113,5 @@ function Apresentation({ setFilter, location }) {
     </StyledApresentation>
   );
 }
-
-Apresentation.defaultProps = {
-  setFilter: () => {},
-};
-
-Apresentation.propTypes = {
-  location: PropTypes.string.isRequired,
-  setFilter: PropTypes.func,
-};
 
 export default Apresentation;

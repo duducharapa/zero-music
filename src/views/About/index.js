@@ -1,22 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 import Apresentation from '../../components/Apresentation';
 import SocialLink from '../../components/SocialLink';
 
 const devIcon = require('../../images/charapa.jpg');
 
-function About({ location }) {
-  const { pathname } = location;
-
+function About() {
   return (
     <div>
-      <Navbar location={pathname} />
-      <Apresentation location={pathname} />
+      <Apresentation />
 
       <Section title="One-man army" icon="users">
         <div className="section-dev">
@@ -71,13 +64,8 @@ function About({ location }) {
           </p>
         </div>
       </Section>
-      <Footer />
     </div>
   );
 }
 
-About.propTypes = {
-  location: PropTypes.string.isRequired,
-};
-
-export default withRouter(About);
+export default About;

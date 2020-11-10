@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import { Redirect, withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
-import Navbar from '../../components/Navbar';
 import Apresentation from '../../components/Apresentation';
-import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 import Button from '../../components/Button';
 
 const notfoundPath = require('../../images/notfound.gif');
 
-function NotFound({ location }) {
-  const { pathname } = location;
+function NotFound() {
   const [clicked, setClick] = useState(false);
   const handleClick = () => setClick(true);
 
   return (
     <div>
-      <Navbar location={pathname} />
-      <Apresentation location={pathname} />
+      <Apresentation />
       <Section title="Magia desconhecida!" icon="times">
         <div className="notfound">
           <h1 className="notfound-title">
@@ -36,13 +31,8 @@ function NotFound({ location }) {
           { clicked ? <Redirect to="/" /> : null }
         </div>
       </Section>
-      <Footer />
     </div>
   );
 }
 
-NotFound.propTypes = {
-  location: PropTypes.string.isRequired,
-};
-
-export default withRouter(NotFound);
+export default NotFound;

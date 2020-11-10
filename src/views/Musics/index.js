@@ -4,15 +4,12 @@ import ReactLoading from 'react-loading';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import MusicList from '../../components/Musiclist';
 import SearchForm from '../../components/Searchform';
 
 function Musics({ location }) {
-  const { pathname } = location;
   const [{ data, loading }] = useAxios(
     'https://zero-music-api.herokuapp.com/musics',
   );
@@ -36,11 +33,7 @@ function Musics({ location }) {
 
   return (
     <div>
-      <Navbar location={pathname} />
-      <Apresentation
-        setFilter={(filt) => setFilter(filt)}
-        location={pathname}
-      />
+      <Apresentation />
       <Section title="Músicas disponíveis" icon="music">
         <SearchForm
           filter={filter}
@@ -61,7 +54,6 @@ function Musics({ location }) {
             )
         }
       </Section>
-      <Footer />
     </div>
   );
 }
