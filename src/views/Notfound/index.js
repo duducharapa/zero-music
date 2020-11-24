@@ -3,13 +3,14 @@ import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { primaryColor, textColor } from '../../utils/colors';
-import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import Button from '../../components/Button';
 
 const notfoundPath = require('../../images/notfound.gif');
 
 const StyledDiv = styled.div`
+  margin-bottom: 80px;  
+
   div.notfound {
     display: flex;
     flex-direction: column;
@@ -42,7 +43,6 @@ function NotFound() {
 
   return (
     <StyledDiv>
-      <Apresentation />
       <Section title="Magia desconhecida!" icon="times">
         <div className="notfound">
           <h1 className="notfound-title">

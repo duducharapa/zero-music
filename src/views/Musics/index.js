@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import useAxios from 'axios-hooks';
 import ReactLoading from 'react-loading';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
-import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import MusicList from '../../components/Musiclist';
 import SearchForm from '../../components/Searchform';
+
+const StyledDiv = styled.div`
+  margin-bottom: 80px;
+`;
 
 function Musics({ location }) {
   const [{ data, loading }] = useAxios(
@@ -32,8 +36,7 @@ function Musics({ location }) {
   }, [filter, data]);
 
   return (
-    <div>
-      <Apresentation />
+    <StyledDiv>
       <Section title="Músicas disponíveis" icon="music">
         <SearchForm
           filter={filter}
@@ -54,7 +57,7 @@ function Musics({ location }) {
             )
         }
       </Section>
-    </div>
+    </StyledDiv>
   );
 }
 

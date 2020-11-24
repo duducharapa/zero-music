@@ -1,10 +1,14 @@
 import React from 'react';
 import useAxios from 'axios-hooks';
 import ReactLoading from 'react-loading';
+import styled from 'styled-components';
 
-import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import MusicList from '../../components/Musiclist';
+
+const StyledDiv = styled.div`
+  margin-bottom: 80px;
+`;
 
 function Home() {
   const sections = [
@@ -16,8 +20,7 @@ function Home() {
   );
 
   return (
-    <div>
-      <Apresentation />
+    <StyledDiv>
       {
         sections.map(({ title, icon }) => (
           <Section title={title} icon={icon} key={title}>
@@ -38,7 +41,7 @@ function Home() {
           </Section>
         ))
       }
-    </div>
+    </StyledDiv>
   );
 }
 

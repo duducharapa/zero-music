@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Section from '../../components/Section';
-import Apresentation from '../../components/Apresentation';
 import SocialLink from '../../components/SocialLink';
 import { primaryColor } from '../../utils/colors';
 
 const devIcon = require('../../images/charapa.jpg');
 
 const StyledDiv = styled.div`
+  margin-bottom: 80px;
+
   div.section-about, div.section-dev {
     background: #EFF8E2;
     padding: 5px;
@@ -50,8 +51,6 @@ const StyledDiv = styled.div`
 function About() {
   return (
     <StyledDiv>
-      <Apresentation />
-
       <Section title="One-man army" icon="users">
         <div className="section-dev">
           <img

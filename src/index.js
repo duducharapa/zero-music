@@ -4,8 +4,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
 
-// import Player from './components/Player';
+import Player from './components/Player';
 import Navbar from './components/Navbar';
+import Apresentation from './components/Apresentation';
 import Home from './views/Home';
 import Musics from './views/Musics';
 import About from './views/About';
@@ -15,6 +16,7 @@ import NotFound from './views/Notfound';
 ReactDOM.render(
   <BrowserRouter>
     <Navbar />
+    <Apresentation />
     <Switch>
       <Route path="/music/:music" component={Music} />
       <Route path="/musics" exact component={Musics} />
@@ -22,7 +24,7 @@ ReactDOM.render(
       <Route path="/" exact component={Home} />
       <Route component={NotFound} />
     </Switch>
-    {/* <Player /> */}
+    <Player />
   </BrowserRouter>,
   document.getElementById('root'),
 );

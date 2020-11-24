@@ -4,7 +4,6 @@ import useAxios from 'axios-hooks';
 import { Redirect } from 'react-router-dom';
 import { darken } from 'polished';
 
-import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import parseLocation from '../../utils/parseLocation';
 import { primaryColor, secondaryColor } from '../../utils/colors';
@@ -12,6 +11,8 @@ import { primaryColor, secondaryColor } from '../../utils/colors';
 const notfoundGif = require('../../images/notfoundmusic.gif');
 
 const StyledDiv = styled.div`
+  margin-bottom: 80px;
+
   div.music {
     display: flex;
     flex-direction: column;
@@ -96,7 +97,6 @@ function Music() {
 
   return (
     <StyledDiv>
-      <Apresentation />
       {
         // TODO: Remover este ternário aninhado
         loading //eslint-disable-line
