@@ -1,14 +1,55 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Section from '../../components/Section';
 import Apresentation from '../../components/Apresentation';
 import SocialLink from '../../components/SocialLink';
+import { primaryColor } from '../../utils/colors';
 
 const devIcon = require('../../images/charapa.jpg');
 
+const StyledDiv = styled.div`
+  div.section-about, div.section-dev {
+    background: #EFF8E2;
+    padding: 5px;
+    word-break: break-word;
+  }
+
+  div.section-dev {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+  }
+
+  h1.section-dev-name {
+    color: ${primaryColor};
+  }
+
+  img.section-dev-image {
+    width: 150px;
+  }
+
+  div.section-dev-info {
+    margin-left: 10px;
+  }
+
+  p.section-dev-description, p.section-about-text {
+    color: grey;
+    word-break: break-word;
+    text-align: justify;
+    margin: 5px 0;
+  }
+`;
+
 function About() {
   return (
-    <div>
+    <StyledDiv>
       <Apresentation />
 
       <Section title="One-man army" icon="users">
@@ -64,7 +105,7 @@ function About() {
           </p>
         </div>
       </Section>
-    </div>
+    </StyledDiv>
   );
 }
 

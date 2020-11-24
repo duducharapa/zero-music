@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
 import './scss/index.scss';
 
+import Player from './components/Player';
 import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Musics from './views/Musics';
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="/" exact component={Home} />
       <Route component={NotFound} />
     </Switch>
+    <Player />
   </BrowserRouter>,
   document.getElementById('root'),
 );

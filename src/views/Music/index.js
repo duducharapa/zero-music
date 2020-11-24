@@ -1,12 +1,90 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import useAxios from 'axios-hooks';
 import { Redirect } from 'react-router-dom';
+import { darken } from 'polished';
 
 import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import parseLocation from '../../utils/parseLocation';
+import { primaryColor, secondaryColor } from '../../utils/colors';
 
 const notfoundGif = require('../../images/notfoundmusic.gif');
+
+const StyledDiv = styled.div`
+  div.music {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background: #EFF8E2;
+  }
+
+  div.music-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  img.music-thumb {
+    width: 12rem;
+    margin-right: 10px;
+  }
+
+  audio.music-player {
+    width: 50%;
+    height: 30px;
+    border: 1px solid ${primaryColor};
+  }
+
+  h1.music-author-name, h1,music-author-label {
+    font-weight: 100;
+  }
+
+  h1.music-author-label {
+    color: ${primaryColor};
+  }
+  
+  h1.music-author-name {
+    color: ${secondaryColor};
+  }
+  
+  h1.music-title-error {
+    color: ${primaryColor};
+    text-align: center;
+  }
+
+  img.music-gif-error {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+  
+  button.music-btn-error {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    color: #EFF8E2;
+    background: ${primaryColor};
+    transition: all 0.4s;
+  
+    &:hover {
+      cursor: pointer;
+      background: ${darken(0.2, primaryColor)};
+    }
+  }
+
+  @media screen and (max-width: 576px){
+    audio.music-player {
+      width: 80%;
+    }
+  
+    div.music-info {
+      justify-content: space-around;
+    }
+  }
+`;
 
 function Music() {
   const { pathname } = window.location;
@@ -17,9 +95,8 @@ function Music() {
   const handleClick = () => setClick(true);
 
   return (
-    <div>
+    <StyledDiv>
       <Apresentation />
-
       {
         // TODO: Remover este ternário aninhado
         loading //eslint-disable-line
@@ -82,7 +159,7 @@ function Music() {
             )
       }
       { clicked ? <Redirect to="/musics" /> : null }
-    </div>
+    </StyledDiv>
   );
 }
 

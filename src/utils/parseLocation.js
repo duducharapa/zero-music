@@ -1,3 +1,3 @@
-module.exports = function parseLocation(location){
-    return location.split('/').reverse()[0];
-}
+module.exports = function parseLocation(location) {
+  return location.split('/').reverse()[0];
+};
