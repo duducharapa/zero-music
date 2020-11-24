@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
 
-import Player from './components/Player';
+// import Player from './components/Player';
 import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Musics from './views/Musics';
