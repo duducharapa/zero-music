@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
-import './scss/index.scss';
 
 import Player from './components/Player';
 import Navbar from './components/Navbar';
@@ -23,7 +22,7 @@ ReactDOM.render(
       <Route path="/" exact component={Home} />
       <Route component={NotFound} />
     </Switch>
-    <Player />
+    {/* <Player /> */}
   </BrowserRouter>,
   document.getElementById('root'),
 );

@@ -1,18 +1,47 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import styled from 'styled-components';
 
+import { primaryColor, textColor } from '../../utils/colors';
 import Apresentation from '../../components/Apresentation';
 import Section from '../../components/Section';
 import Button from '../../components/Button';
 
 const notfoundPath = require('../../images/notfound.gif');
 
+const StyledDiv = styled.div`
+  div.notfound {
+    display: flex;
+    flex-direction: column;
+    background: ${textColor};
+    padding: 5px;
+    align-items: center;
+  }
+
+  h1.notfound-title {
+    color: ${primaryColor};
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  img.notfound-gif {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  @media screen and (max-width: 576px){
+    h1.notfound-title {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
 function NotFound() {
   const [clicked, setClick] = useState(false);
   const handleClick = () => setClick(true);
 
   return (
-    <div>
+    <StyledDiv>
       <Apresentation />
       <Section title="Magia desconhecida!" icon="times">
         <div className="notfound">
@@ -31,7 +60,7 @@ function NotFound() {
           { clicked ? <Redirect to="/" /> : null }
         </div>
       </Section>
-    </div>
+    </StyledDiv>
   );
 }
 
