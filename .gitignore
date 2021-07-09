@@ -24,3 +24,6 @@ yarn-error.log*
 
 # files
 /src/musics
+
+# log errors and cache NPM
+package-lock.json

@@ -19,6 +19,7 @@ ReactDOM.render(
       <Route path="/music/:music" component={Music} />
       <Route path="/musics" exact component={Musics} />
       <Route path="/about" exact component={About} />
+      <Route path="/404" exact component={NotFound} />
       <Route path="/" exact component={Home} />
       <Route component={NotFound} />
     </Switch>
